@@ -1,0 +1,143 @@
+@use "../global/vars";
+
+:root {
+  --mod-FormPanel-shadow: 0 4px 6px -1px rgb(0 0 0 / .1), 0 2px 4px -2px rgb(0 0 0 / .1), 0 -2px 4px -2px rgb(0 0 0 / .1), -2px 0 4px -2px rgb(0 0 0 / .1);
+}
+
+.mod-AuthForm {
+  .pageName {
+    text-align: center;
+    font-family: var(--fontNotoSerifJP);
+    font-size: 3.2rem;
+  }
+  .formFields {
+    .di {
+      margin-top: 10px;
+    }
+    .labelBlock {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.3rem;
+
+      .badge {
+        display: inline-block;
+        padding: 2px 4px;
+        border-radius: 4px;
+        background: #ccc;
+        line-height: 1;
+        font-size: 1rem;
+
+        &.required {
+          background: #fee;
+          color: #c00;
+        }
+      }
+    }
+    .descriptionBlock {
+      margin-top: 4px;
+      font-size: 1.3rem;
+    }
+    .errorBlock {
+      margin-top: 4px;
+      color: #900;
+
+      &:empty {
+        display: none;
+      }
+      .errorMessages {
+        li {
+          font-size: 1.3rem;
+        }
+      }
+      p {
+        font-size: 1.3rem;
+      }
+    }
+    .fieldBlock {
+      margin-top: 4px;
+
+      #{vars.$inputField} {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px 14px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+
+        &:focus {
+          border-color: transparent;
+          outline: 2px solid var(--primaryLightColor);
+        }
+      }
+      .items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 12px;
+
+        li {
+          label {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+          }
+        }
+      }
+    }
+  }
+  .helperTextBlock {
+    margin-top: 10px;
+    font-size: 1.3rem;
+
+    ul {
+      li {
+        width: fit-content;
+        margin-left: auto;
+      }
+    }
+  }
+  .formButtons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    margin-top: 20px;
+
+    li {
+      line-height: 1;
+
+      a {
+        display: inline-block;
+        color: var(--primaryColor);
+        vertical-align: top;
+        font-size: 1.2rem;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      button {
+        padding: 10px 14px;
+        background: var(--primaryColor);
+        color: #fff;
+
+        &:hover {
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+}
+
+.mod-FormPanel {
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: var(--mod-FormPanel-shadow);
+}
