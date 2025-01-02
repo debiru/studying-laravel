@@ -1,6 +1,13 @@
 <?php
+$customConfig = [];
 
-return [
+$customConfig['site_name'] = env('APP_SITE_NAME', 'SITE_NAME');
+$customConfig['site_title_suffix'] = env('APP_SITE_TITLE_SUFFIX', 'SITE_TITLE_SUFFIX');
+$customConfig['site_title'] = sprintf('%s | %s', $customConfig['site_name'], $customConfig['site_title_suffix']);
+$customConfig['site_description'] = env('APP_SITE_DESCRIPTION', 'SITE_DESCRIPTION');
+$customConfig['twitter'] = env('APP_TWITTER', 'TWITTER_ID');
+
+$config = [
 
     /*
     |--------------------------------------------------------------------------
@@ -124,3 +131,5 @@ return [
     ],
 
 ];
+
+return array_merge($customConfig, $config);
