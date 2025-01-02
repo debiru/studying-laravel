@@ -2,8 +2,15 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
-        "dev": "vite"
+        "autoload": "composer dumpautoload",
+        "build": "build/build.sh",
+        "watch": "build/watch.sh",
+        "stylelint": "build/stylelint.sh",
+        "dev": "vite",
+        "test": "php artisan test",
+        "route": "php artisan route:list",
+        "lang": "build/lang-update.sh",
+        "clear": "build/cache-clear.sh force"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.20",
